@@ -1,0 +1,33 @@
+source $TELENV
+
+### User Preferences section
+### This section is computer generated.
+### Please do not modify to the end of the file.
+### Place your hand edits above this section.
+###
+set allegro_new_units = millimeters
+set allegro_new_accuracy = 3
+set pad_designer_new_units = millimeters
+set new_units = millimeters
+set new_accuracy = 4
+set padpath = $padpath C:\Cadence\LIBRARY\Padstack\ C:\SPB_Data\User_Library\PAD
+set psmpath = $psmpath C:\SPB_Data\User_Library\Footprint C:\Cadence\LIBRARY\bcon100t\ C:\Cadence\LIBRARY\bcon156t\ C:\Cadence\LIBRARY\bga\ C:\Cadence\LIBRARY\clcc\ C:\Cadence\LIBRARY\dcon050t\ C:\Cadence\LIBRARY\dcon085t\ C:\Cadence\LIBRARY\dimm050f\ C:\Cadence\LIBRARY\dimm050t\ C:\Cadence\LIBRARY\din\ C:\Cadence\LIBRARY\dip100b\ C:\Cadence\LIBRARY\dip100t\ C:\Cadence\LIBRARY\dsubt\ C:\Cadence\LIBRARY\econ100t\ C:\Cadence\LIBRARY\fbus\ C:\Cadence\LIBRARY\isa\ C:\Cadence\LIBRARY\jumper\ C:\Cadence\LIBRARY\layout\ C:\Cadence\LIBRARY\lcon100t\ C:\Cadence\LIBRARY\pc104\ C:\Cadence\LIBRARY\pci\ C:\Cadence\LIBRARY\pcon100t\ C:\Cadence\LIBRARY\pcon156t\ C:\Cadence\LIBRARY\pga\ C:\Cadence\LIBRARY\plcc\ C:\Cadence\LIBRARY\quad\ C:\Cadence\LIBRARY\quadb\ C:\Cadence\LIBRARY\relay\ C:\Cadence\LIBRARY\rf\ C:\Cadence\LIBRARY\sbus\ C:\Cadence\LIBRARY\\simm050f\ C:\Cadence\LIBRARY\simm050t\ C:\Cadence\LIBRARY\simm100f\ C:\Cadence\LIBRARY\simm100t\ C:\Cadence\LIBRARY\sip\ C:\Cadence\LIBRARY\sog\ C:\Cadence\LIBRARY\soj\ C:\Cadence\LIBRARY\tele\ C:\Cadence\LIBRARY\tm_axial\ C:\Cadence\LIBRARY\tm_cap_p\ C:\Cadence\LIBRARY\tm_cylnd\ C:\Cadence\LIBRARY\tm_diode\ C:\Cadence\LIBRARY\tm_disc\ C:\Cadence\LIBRARY\tm_rad\ C:\Cadence\LIBRARY\to\ C:\Cadence\LIBRARY\vres\ C:\Cadence\LIBRARY\wcon100t\ C:\Cadence\LIBRARY\xt\ C:\Cadence\LIBRARY\zigzag\ C:\Cadence\LIBRARY\mechanical\ C:\Cadence\LIBRARY\fnd\ C:\Cadence\LIBRARY\sm\
+set parampath = $parampath C:\Cadence\tech
+set techpath = $techpath C:\Cadence\tech
+set viewpath = $viewpath C:\Cadence\tech
+set no_dragpopup
+set ads_sdreport = report
+set ads_sdart = ARTWORK
+set schematic_editor = capture
+
+funckey 1 'subclass TOP'
+funckey 2 'subclass BOTTOM'
+funckey s 'pop swap'
+funckey i 'zoom in'
+funckey o 'zoom out'
+funckey r 'iangle -90'
+funckey m 'move'
+alias Esc cancel
+alias Del delete
+
+set infinite _cursor_bug_nt 1

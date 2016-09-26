@@ -1,0 +1,549 @@
+LIBRARY orcad
+% This Library Mapping File includes GT library %
+% Coded by shpark@npit.co.kr %
+% Copyright Nine plus IT Co. Ltd. 2014 %
+
+% 7400 %
+BEGIN
+FUNCTION np7400 (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "NAN2" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7402 %
+BEGIN
+FUNCTION np7402 (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "NOR2" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7404 %
+BEGIN
+FUNCTION np7404 (2, GND, VCC) 
+RETURNS (1)
+FUNCTION "INV" ("i0", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7404x %
+BEGIN
+FUNCTION np7404x (2, 3, 7, 10, 13, 16, GND, VCC) 
+RETURNS (1, 5, 8, 11, 14, 17)
+FUNCTION "7404" ("A_A", "A_B", "A_C", "A_D", "A_E", "A_F", "GND", "VCC") 
+RETURNS ("Y_A", "Y_B", "Y_C", "Y_D", "Y_E", "Y_F")
+END
+
+% 7408 %
+BEGIN
+FUNCTION np7408 (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "AND2" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7410 %
+BEGIN
+FUNCTION np7410 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "NAN3" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7411 %
+BEGIN
+FUNCTION np7411 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "AND3" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7420 %
+BEGIN
+FUNCTION np7420 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "NAN4" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7421 %
+BEGIN
+FUNCTION np7421 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "AND4" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7430 %
+BEGIN
+FUNCTION np7430 (2, 3, 4, 5, 6, 7, 8, 9, GND, VCC) 
+RETURNS (1)
+FUNCTION "NAN8" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7432 %
+BEGIN
+FUNCTION np7432 (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "OR2" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 7486 %
+BEGIN
+FUNCTION np7486 (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "XOR" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% 74133 %
+BEGIN
+FUNCTION np74133 (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, GND, VCC) 
+RETURNS (1)
+FUNCTION "NAN13" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% addf %
+BEGIN
+FUNCTION np7483 (a1, b1, c0, GND, VCC) 
+RETURNS (s1, c1)
+FUNCTION "ADDF" ("a0", "b0", "cin", "GND", "VCC") 
+RETURNS ("s0", "cout")
+END
+
+% addh %
+BEGIN
+FUNCTION npaddh (a1, b1, GND, VCC) 
+RETURNS (s1, c1)
+FUNCTION "ADDH" ("a0", "b0", "GND", "VCC") 
+RETURNS ("s0", "cout")
+END
+
+% and5 %
+BEGIN
+FUNCTION npand5 (in1, in2, in3, in4, in5, GND, VCC) 
+RETURNS (out)
+FUNCTION "and5" ("i0","i1","i2","i3","i4", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% and8 %
+BEGIN
+FUNCTION npand8 (2,3,4,5,6,7,8,9, GND, VCC) 
+RETURNS (1)
+FUNCTION "and8" ("i0","i1","i2","i3","i4", "i5","i6","i7", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% buf %
+BEGIN
+FUNCTION npbuf (2, GND, VCC) 
+RETURNS (1)
+FUNCTION "buf" ("i0", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% and_not %
+BEGIN
+FUNCTION npand_not (2, 3, GND, VCC) 
+RETURNS (1)
+FUNCTION "and_not" ("i0", "i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% ao21 %
+BEGIN
+FUNCTION npao21 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "ao21" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% ao22 %
+BEGIN
+FUNCTION npao22 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "ao22" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% aoi21 %
+BEGIN
+FUNCTION npaoi21 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "aoi21" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% aoi22 %
+BEGIN
+FUNCTION npaoi22 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "aoi22" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% aoi222 %
+BEGIN
+FUNCTION npaoi222 (2, 3, 4, 5, 6, 7, GND, VCC) 
+RETURNS (1)
+FUNCTION "aoi222" ("i0", "i1", "i2", "i3", "i4", "i5", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% aoi2n2 %
+BEGIN
+FUNCTION npaoi2n2 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "aoi2n2" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% fd %
+BEGIN
+FUNCTION npfd (d, clk, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fd" ("d", "clk", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fdr %
+BEGIN
+FUNCTION npfdr (d, clk, rn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fdr" ("d", "clk", "r\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fds %
+BEGIN
+FUNCTION npfds (d, clk, sn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fds" ("d", "clk", "s\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fdsr %
+BEGIN
+FUNCTION npfdsr (d, clk, sn, rn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fdsr" ("d", "clk", "s\", "r\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fjk %
+BEGIN
+FUNCTION npfjk (j, k, clk, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fjk" ("j", "k", "clk", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fjkr %
+BEGIN
+FUNCTION npfjkr (j, k, clk, rn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fjkr" ("j", "k", "clk", "r\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% fjksr %
+BEGIN
+FUNCTION npfjksr (j, k, clk, sn, rn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "fjksr" ("j", "k", "clk", "s\", "r\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% ldh %
+BEGIN
+FUNCTION npldh (d, lat, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "ldh" ("d", "lat", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% ldl %
+BEGIN
+FUNCTION npldl (d, lat, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "ldl" ("d", "lat", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% ldlr %
+BEGIN
+FUNCTION npldlr (d, lat, rn, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "ldlr" ("d", "lat", "r\", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% lsr %
+BEGIN
+FUNCTION nplsr (s, r, GND, VCC) 
+RETURNS (q, qn)
+FUNCTION "lsr" ("s", "r", "GND", "VCC") 
+RETURNS ("q", "q\")
+END
+
+% maj23 %
+BEGIN
+FUNCTION npmaj23 (1, 2, 3, GND, VCC) 
+RETURNS (4)
+FUNCTION "maj23" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% mux2 %
+BEGIN
+FUNCTION npmux2 (d0, d1, s, GND, VCC) 
+RETURNS (o)
+FUNCTION "mux2" ("d0", "d1", "s", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% mux4 %
+BEGIN
+FUNCTION npmux4 (d0, d1, d2, d3, s0, s1, GND, VCC) 
+RETURNS (o)
+FUNCTION "mux4" ("d0", "d1", "d2", "d3", "s0", "s1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% mux8 %
+BEGIN
+FUNCTION npmux8 (d0, d1, d2, d3, d4, d5, d6, d7, s0, s1, s2, GND, VCC) 
+RETURNS (o)
+FUNCTION "mux8" ("d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "s0", "s1", "s2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nand2 %
+BEGIN
+FUNCTION npnand2 (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "nand2" ("i0","i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nand3 %
+BEGIN
+FUNCTION npnand3 (2,3,4, GND, VCC) 
+RETURNS (1)
+FUNCTION "nand3" ("i0","i1","i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nand4 %
+BEGIN
+FUNCTION npnand4 (2,3,4,5, GND, VCC) 
+RETURNS (1)
+FUNCTION "nand4" ("i0","i1","i2","i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nand5 %
+BEGIN
+FUNCTION npnand5 (2,3,4,5,6, GND, VCC) 
+RETURNS (1)
+FUNCTION "nand5" ("i0","i1","i2","i3","i4","GND", "VCC") 
+RETURNS ("o")
+END
+
+% nand8 %
+BEGIN
+FUNCTION npnand8 (2,3,4,5,6,7,8,9, GND, VCC) 
+RETURNS (1)
+FUNCTION "nand8" ("i0","i1","i2","i3","i4", "i5","i6","i7", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nor2 %
+BEGIN
+FUNCTION npnor2 (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "nor2" ("i0","i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nor3 %
+BEGIN
+FUNCTION npnor3 (2,3,4, GND, VCC) 
+RETURNS (1)
+FUNCTION "nor3" ("i0","i1","i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nor4 %
+BEGIN
+FUNCTION npnor4 (2,3,4,5, GND, VCC) 
+RETURNS (1)
+FUNCTION "nor4" ("i0","i1","i2","i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% nor5 %
+BEGIN
+FUNCTION npnor5 (2,3,4,5,6, GND, VCC) 
+RETURNS (1)
+FUNCTION "nor5" ("i0","i1","i2","i3","i4","GND", "VCC") 
+RETURNS ("o")
+END
+
+% nor8 %
+BEGIN
+FUNCTION npnor8 (2,3,4,5,6,7,8,9, GND, VCC) 
+RETURNS (1)
+FUNCTION "nor8" ("i0","i1","i2","i3","i4", "i5","i6","i7", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% not %
+BEGIN
+FUNCTION npnot (2, GND, VCC) 
+RETURNS (1)
+FUNCTION "not" ("i0", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% or3 %
+BEGIN
+FUNCTION npor3 (2,3,4, GND, VCC) 
+RETURNS (1)
+FUNCTION "or3" ("i0","i1","i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% or4 %
+BEGIN
+FUNCTION npor4 (2,3,4,5, GND, VCC) 
+RETURNS (1)
+FUNCTION "or4" ("i0","i1","i2","i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% or5 %
+BEGIN
+FUNCTION npor5 (2,3,4,5,6, GND, VCC) 
+RETURNS (1)
+FUNCTION "or5" ("i0","i1","i2","i3","i4","GND", "VCC") 
+RETURNS ("o")
+END
+
+% or8 %
+BEGIN
+FUNCTION npor8 (2,3,4,5,6,7,8,9, GND, VCC) 
+RETURNS (1)
+FUNCTION "or8" ("i0","i1","i2","i3","i4", "i5","i6","i7", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xor2 %
+BEGIN
+FUNCTION npxor2 (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "xor2" ("i0","i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xor3 %
+BEGIN
+FUNCTION npxor3 (2,3,4, GND, VCC) 
+RETURNS (1)
+FUNCTION "xor3" ("i0","i1","i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xor4 %
+BEGIN
+FUNCTION npxor4 (2,3,4,5, GND, VCC) 
+RETURNS (1)
+FUNCTION "xor4" ("i0","i1","i2","i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xnor2 %
+BEGIN
+FUNCTION npxnor2 (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "xnor2" ("i0","i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xnor3 %
+BEGIN
+FUNCTION npxnor3 (2,3,4, GND, VCC) 
+RETURNS (1)
+FUNCTION "xnor3" ("i0","i1","i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% xnor4 %
+BEGIN
+FUNCTION npxnor4 (2,3,4,5, GND, VCC) 
+RETURNS (1)
+FUNCTION "xnor4" ("i0","i1","i2","i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% oa21 %
+BEGIN
+FUNCTION npoa21 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "oa21" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% oa22 %
+BEGIN
+FUNCTION npoa22 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "oa22" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% oai21 %
+BEGIN
+FUNCTION npoai21 (2, 3, 4, GND, VCC) 
+RETURNS (1)
+FUNCTION "oai21" ("i0", "i1", "i2", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% oai22 %
+BEGIN
+FUNCTION npoai22 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "oai22" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% oai2n2 %
+BEGIN
+FUNCTION npoai2n2 (2, 3, 4, 5, GND, VCC) 
+RETURNS (1)
+FUNCTION "oai2n2" ("i0", "i1", "i2", "i3", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% or_not %
+BEGIN
+FUNCTION npor_not (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "or_not" ("i0","i1", "GND", "VCC") 
+RETURNS ("o")
+END
+
+% tbuf %
+BEGIN
+FUNCTION nptbuf (2,3, GND, VCC) 
+RETURNS (1)
+FUNCTION "tbuf" ("i0","oe", "GND", "VCC") 
+RETURNS ("o")
+END
+

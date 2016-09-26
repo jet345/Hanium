@@ -1,0 +1,887 @@
+**** No.01 ADDF
+**** 
+.SUBCKT ADDF S0 COUT A0 B0 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD1LOG LOGICEXP(3,2) DPWR DGND
++ A0 B0 CIN
++ S0 COUT
++ D_PLD_GATE IO_PLD 
++
++ LOGIC:
++   A0BAR = { ~A0 }
++   B0BAR = { ~B0 }
++   CINBAR = { ~CIN }
++
++   S0 = { (CINBAR & A0BAR & B0) | (CIN & A0BAR & B0BAR) 
++          | (A0 & B0 & CIN) | (A0 & B0BAR & CINBAR) } 
++   COUT = { (CIN & B0) | (CIN & A0) | (A0 & B0) }
+
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.02 ADDH
+**** 
+.SUBCKT ADDH A0 B0 S0 COUT
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(2,2) DPWR DGND
++  A0 B0
++  S0 COUT
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  S0 = { ~( A0 | B0 ) }
++  COUT = { A0 & B0 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.03 AND2
+**** 
+.SUBCKT AND2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.04 AND3
+**** 
+*  INPUT AND3 GATE
+*
+.SUBCKT AND3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.05 AND4
+**** 
+*  INPUT AND4 GATE
+*
+.SUBCKT AND4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.06 AND5
+**** 
+.SUBCKT AND5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.07 AND8
+**** 
+.SUBCKT AND8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.08 AND_NOT
+**** 
+.SUBCKT AND_NOT I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(2,1) DPWR DGND
++  I0 I1
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { I0 & ~I1 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.09 AO21
+**** 
+.SUBCKT AO21 I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (I0 & I1) | I2 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.10 AO22
+**** 
+.SUBCKT AO22 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (I0 & I1) | ( I2 & I3) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.11 AOI21
+**** 
+.SUBCKT AOI21 I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 & I1) | I2 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.12 AOI22
+**** 
+.SUBCKT AOI22 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 & I1) | ( I2 & I3) ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.13 AOI222
+**** 
+.SUBCKT AOI222 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(6,1) DPWR DGND
++  I0 I1 I2 I3 I4 I5
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 & I1) | ( I2 & I3) | ( I4 & I5) ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.14 AOI2N2
+**** 
+.SUBCKT AOI2N2 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 & I1) | ~ ( I2 | I3) ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.15 BUF
+**** 
+.SUBCKT BUF  I0  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 BUF
++  DPWR  DGND
++  I0  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.16 FD
+**** 
+.SUBCKT FD D CLK  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.17 FDR
+**** 
+.SUBCKT FDR D CLK R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.19 FDS
+**** 
+.SUBCKT FDS D CLK S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  S $D_HI  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.20 FDSR
+**** 
+.SUBCKT FDSR D CLK R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  S R  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.24 FJK
+**** 
+.SUBCKT FJK  J CLK K  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.25 FJKR
+**** 
+.SUBCKT FJKR  J CLK K R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.26 FJKSR
+**** 
+.SUBCKT FJKSR  J CLK K R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  S R CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.32 LDH
+**** 
+.SUBCKT LDH D LAT  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DLTCH(1)
++  DPWR  DGND
++  $D_HI $D_HI LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.33 LDL
+**** 
+.SUBCKT LDL D LAT  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  LAT R0
++  D_PLD_GATE IO_PLD
+*
+U2 DLTCL(1)
++  DPWR  DGND
++  $D_HI $D_HI R0
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.34 LDLR
+**** 
+.SUBCKT DLATR D LAT R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  LAT R0
++  D_PLD_GATE IO_PLD
+*
+U2 DLTCH(1)
++  DPWR  DGND
++  $D_HI R R0
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.35 LSR
+**** 
+.SUBCKT LSR S R Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(2)
++  DPWR  DGND
++  S QBAR Q
++  D_PLD_GATE IO_PLD
+*
+U2 NAND(2)
++  DPWR  DGND
++  R Q QBAR
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.36 MAJ23
+**** 
+.SUBCKT MAJ23 I0 I1 I2 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  0
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ( I0 & I1 ) | ( I0 & I2 ) | ( I1 & I2 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.37 MUX2
+**** 
+.SUBCKT MUX2 D0 D1 S O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  D0 D1 S
++  0
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ( D0 & ~S ) | ( D1 & S ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.38 MUX4
+**** 
+.SUBCKT MUX4 D0 D1 D2 D3 S0 S1 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(6,1) DPWR DGND
++  D0 D1 D2 D3 S0 S1
++  0
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (D0 & ~S1 & ~S0) | ( D1 & ~S1 & S0 ) | ( D2 & S1 & ~S0 ) | ( D3 & S1 & S0 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.39 MUX8
+**** 
+.SUBCKT MUX8 D0 D1 D2 D3 D4 D5 D6 D7 S0 S1 S2 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(11,1) DPWR DGND
++  D0 D1 D2 D3 D4 D5 D6 D7 S0 S1 S2
++  0
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (D0 & ~S2 & ~S1 & ~S0) | 
++        (D1 & ~S2 & ~S1 &  S0) |
++        (D2 & ~S2 &  S1 & ~S0) |
++        (D3 & ~S2 &  S1 & S0) |
++        (D4 &  S2 & ~S1 & ~S0) |
++        (D5 &  S2 & ~S1 &  S0) |
++        (D6 &  S2 &  S1 & ~S0) |
++        (D7 &  S2 &  S1 &  S0) |  }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.40 NAND2
+**** 
+.SUBCKT NAND2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.41 NAND3
+**** 
+.SUBCKT NAND3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.42 NAND4
+**** 
+.SUBCKT NAND4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.43 NAND5
+**** 
+.SUBCKT NAND5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.44 NAND8
+**** 
+.SUBCKT NAND8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.45 NOR2
+**** 
+.SUBCKT NOR2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.46 NOR3
+**** 
+.SUBCKT NOR3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.47 NOR4
+**** 
+.SUBCKT NOR4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.48 NOR5
+**** 
+.SUBCKT NOR5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.49 NOR8
+**** 
+.SUBCKT NOR8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.50 NOT
+**** 
+.SUBCKT NOT  I0  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  I0  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.51 OA21
+**** 
+.SUBCKT OA21 I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (I0 | I1) & I2 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.52 OA22
+**** 
+.SUBCKT OA22 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { (I0 | I1) & ( I2 | I3) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.53 OAI21
+**** 
+.SUBCKT OAI21 I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 | I1) & I2 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.54 OAI22
+**** 
+.SUBCKT OAI22 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 | I1) & ( I2 | I3) ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.55 OAI2N2
+**** 
+.SUBCKT OAI2N2 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( (I0 | I1) & ~( I2 & I3) ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.57 OR2
+**** 
+.SUBCKT OR2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.58 OR3
+**** 
+.SUBCKT OR3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.59 OR4
+**** 
+.SUBCKT OR4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.60 OR5
+**** 
+.SUBCKT OR5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.61 OR8
+**** 
+.SUBCKT OR8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.62 OR_NOT
+**** 
+.SUBCKT OR_NOT I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(2,1) DPWR DGND
++  I0 I1
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { I0 | ~I1 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.64 TBUF
+**** 
+.SUBCKT TBUF  I0 OE  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 BUF3
++  DPWR  DGND
++  I0 OE  O
++  D_PLD_TGATE IO_PLD
+*
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.65 XNOR2
+**** 
+.SUBCKT XNOR2  I0 I1 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(2,1) DPWR DGND
++  I0 I1
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( I0 ^ I1 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.66 XNOR3
+**** 
+.SUBCKT XNOR3 I0 I1 I2 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( I0 ^ I1 ^ I2 ) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.67 XNOR4
+**** 
+.SUBCKT XNOR4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { ~( I0 ^ I1 ^ I2 ^ I3) }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.68 XOR2
+**** 
+.SUBCKT XOR2  I0 I1 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 XOR
++  DPWR  DGND
++  I0 I1 O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+**** No.69 XOR3
+**** 
+.SUBCKT XOR3 I0 I1 I2 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(3,1) DPWR DGND
++  I0 I1 I2
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { I0 ^ I1 ^ I2 }
+.ENDS
+*
+*-------------------------------------------------------------------------
+**** No.70 XOR4
+**** 
+.SUBCKT XOR4 I0 I1 I2 I3 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 LOGICEXP(4,1) DPWR DGND
++  I0 I1 I2 I3
++  O
++  D_PLD_GATE IO_PLD
++
++LOGIC:
++  O = { I0 ^ I1 ^ I2 ^ I3 }
+.ENDS
+*$
+*-------------------------------------------------------------------------
+
+
+
+
